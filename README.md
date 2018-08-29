@@ -4,7 +4,7 @@ When you thought you needed something like [Lunr.js](https://lunrjs.com) but it 
 
 ## It's so tiny!
 
-Ayup. It's designed to be more or less a drop-in for your lunr.js installation unless you're doing anything clever (so hands off those Levenshtein distances and fancy-pants vectors!) but it's only 2kb minified. The only thing it contains is a really basic algorithmic stemmer which is currently in, uh, Swedish, and a naive string search. That's what I needed when I wrote this.
+Yup. It's designed to be more or less a drop-in for your lunr.js installation unless you're doing anything clever (so hands off those Levenshtein distances and fancy-pants vectors!) but it's only 2kb minified. The only thing it contains is a really basic algorithmic stemmer which is currently in, uh, Swedish, and a naive string search. That's what I needed when I wrote this.
 
 ## Installation
 
@@ -41,4 +41,4 @@ let idx = new Pucko(function() {
 
 When searching, Pucko will split any string it receives on spaces only, and the search is always case insensitive. Combined with the stemmer, this means that if you search for something like "Leva farligt" you'll get results that match the substrings `["lev", "farl"]`. You'll get a lot more results than Lunr, for sure.
 
-Another difference versus Lunr is that you'll only get an array of strings back. Since Pucko isn't doing anything suspicious like tracking advanced matching data it makes no sense to wrap all your results with `{ ref: "foo" }`. All you'll get back is the ref string, whether you like it or not.
+Another difference versus Lunr is that you'll only get an array of strings back. Since Pucko isn't doing anything suspicious like tracking advanced matching data it makes no sense to wrap all your results with `{ ref: "foo" }`. All you'll get back is the ref string, and you'll damn well like it.
