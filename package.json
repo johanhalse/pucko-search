@@ -1,5 +1,5 @@
 {
-  "name": "pucko-search",
+  "name": "@johanhalse/pucko-search",
   "version": "0.0.1",
   "description": "The stupidest search",
   "main": "pucko-search.js",
