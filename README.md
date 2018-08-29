@@ -26,7 +26,7 @@ let idx = new Pucko(function() {
   this.field("body");
   this.field("summary");
 
-  myDocuments.forEach(function(doc) {
+  myDocuments.forEach(doc => {
     this.add(doc);
   }, this);
 });
