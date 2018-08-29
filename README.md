@@ -19,15 +19,16 @@ npm install --save-dev @johanhalse/pucko-search
 One difference between Lunr and Pucko when instantiating is that you need a `new` keyword. Otherwise the functions look pretty much the same:
 
 ```javascript
+import Pucko from "@johanhalse/pucko-search";
 let idx = new Pucko(function() {
-	this.ref("url");
-	this.field("header");
-	this.field("body");
-	this.field("summary");
+  this.ref("url");
+  this.field("header");
+  this.field("body");
+  this.field("summary");
 
-	myDocuments.forEach(function(doc) {
-		this.add(doc);
-	}, this);
+  myDocuments.forEach(function(doc) {
+    this.add(doc);
+  }, this);
 });
 ```
 
