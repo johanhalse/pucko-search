@@ -9,7 +9,7 @@ let corpus = [
       kan jag icke leva, \
       fjättrad vid lyran skulle jag dö. \
       Är ock mig lyran det högsta på jorden \
-      bleve jag den trogen, \
+      bléve jag den trogen, \
       vore jag icke en flammande själ. \
       Den som icke med blodiga naglar \
       bryter sin bräcka i vardagens mur \
@@ -69,7 +69,13 @@ test("Searches in split string", () => {
   ]);
 });
 
+test("Ignores trailing spaces", () => {
+  expect(idx.search("vardagens")).toEqual(["https://www.example.com/1"]);
+  expect(idx.search("vardagens ")).toEqual(["https://www.example.com/1"]);
+});
+
 test("Ignores diacritics", () => {
   expect(idx.search("bräcka")).toEqual(["https://www.example.com/1"]);
   expect(idx.search("bracka")).toEqual(["https://www.example.com/1"]);
+  expect(idx.search("bleve")).toEqual(["https://www.example.com/1"]);
 });

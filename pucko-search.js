@@ -31,7 +31,13 @@ class PuckoSearch {
 
   processSearchTerms(str) {
     // A somewhat WTF way of flattening an array while waiting for flatMap
-    return [].concat(...str.split(" ").map(this.normalize).map(this.stem));
+    return [].concat(
+      ...str
+        .trim()
+        .split(" ")
+        .map(this.normalize)
+        .map(this.stem)
+    );
   }
 
   normalize(str) {
@@ -90,7 +96,11 @@ class PuckoSearch {
     return item => {
       for (let i = 0; i < strings.length; i++) {
         for (let j = 0; j < fields.length; j++) {
-          if (this.normalize(item[fields[j]]).toLowerCase().indexOf(strings[i]) > -1) {
+          if (
+            this.normalize(item[fields[j]])
+              .toLowerCase()
+              .indexOf(strings[i]) > -1
+          ) {
             return true;
           }
         }
