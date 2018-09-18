@@ -68,3 +68,8 @@ test("Searches in split string", () => {
     "https://www.example.com/2"
   ]);
 });
+
+test("Ignores diacritics", () => {
+  expect(idx.search("bräcka")).toEqual(["https://www.example.com/1"]);
+  expect(idx.search("bracka")).toEqual(["https://www.example.com/1"]);
+});
