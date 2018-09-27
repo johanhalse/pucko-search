@@ -79,3 +79,11 @@ test("Ignores diacritics", () => {
   expect(idx.search("bracka")).toEqual(["https://www.example.com/1"]);
   expect(idx.search("bleve")).toEqual(["https://www.example.com/1"]);
 });
+
+test("Searches exact matches", () => {
+  expect(idx.search("som på")).toEqual([
+    "https://www.example.com/1",
+    "https://www.example.com/2"
+  ]);
+  expect(idx.search("^som på")).toEqual(["https://www.example.com/2"]);
+});

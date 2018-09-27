@@ -32,12 +32,17 @@ class PuckoSearch {
   processSearchTerms(str) {
     // A somewhat WTF way of flattening an array while waiting for flatMap
     return [].concat(
-      ...str
-        .trim()
-        .split(" ")
+      ...this.split(str.trim())
         .map(this.normalize)
         .map(this.stem)
     );
+  }
+
+  split(str) {
+    if (str.indexOf("^") === 0) {
+      return [str.substr(1)];
+    }
+    return str.split(" ");
   }
 
   normalize(str) {

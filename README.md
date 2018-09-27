@@ -40,6 +40,6 @@ let idx = new Pucko(function() {
 
 `search(String)`: perform a search for your terms
 
-When searching, Pucko will split any string it receives on spaces only, and the search is always case insensitive. Combined with the stemmer, this means that if you search for something like "Leva farligt" you'll get results that match the substrings `["lev", "farl"]`. It'll also strip diacritics in both search term and corpus. You'll get a lot more results than Lunr, for sure.
+When searching, Pucko will split any string it receives on spaces only, and the search is always case insensitive. Combined with the stemmer, this means that if you search for something like "Leva farligt" you'll get results that match the substrings `["lev", "farl"]`. It'll also strip diacritics in both search term and corpus. You'll get a lot more results than Lunr, for sure. If you want to search for an _exact match_ and not split the string by spaces, prefix your search term with `^`.
 
 Another difference versus Lunr is that you'll only get an array of strings back. Since Pucko isn't doing anything suspicious like tracking advanced matching data it makes no sense to wrap all your results with `{ ref: "foo" }`. All you'll get back is the ref string, and you'll damn well like it.

@@ -1,6 +1,6 @@
 {
   "name": "@johanhalse/pucko-search",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "The stupidest search",
   "main": "lib/pucko-search.js",
   "scripts": {
